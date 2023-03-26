@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listado de personas</title>
+    <link href="css/estilos.css" rel="stylesheet"/>
+
+</head>
+
+<body onload="mostrarPersonas()">
+    <div class="contenedor" id="cabecero">
+        <h1>Listado de Personas</h1>
+    </div>
+
+    <div class = 'contenedor' > <!--Del ul se obtiene todos los li al momento de llamar el id de ul-->
+        <div class="elemento">
+            <ul id="personas">
+                <!-- <li>Juan Perez</li> este es un ejemplo de un li estatico, para ello se va a utilizar una funcion que se llama al momento de cargar la pagina-->
+            </ul>
+        </div>
+    </div>
+
+    <div class="contenedor">
+        <div style='text-align: center'>
+            <button style="cursor: pointer" onclick="agregarPersona()">+</button>
+        </div>
+
+        <form id="forma">
+            <input type="text" id="nombre" placeholder="Nombre"/>
+            <input type="text" id="apellido" placeholder="Apellido"/>
+        </form>
+
+    </div>
+    
+    <script src='js/persona.js'></script>
+    <script src='js/app.js'></script>
+
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manejo DOM, write()</title>
+</head>
+<body>
+    <h1 id="titulo"> Manejo de Dom con JavaScript</h1>
+
+    <!--Aqui estamos aplicando directamente el this que seria el this de ese objeto pero no es recomendable, mejor se le asigna un metodo-->
+    <h2 onclick="this.innerHTML = 'NUEVO TITULO'">Titulo a aplicar un evento</h2>
+    <button onclick="mostrar()">Mostrar</button>
+
+    <!--Aqui se le asigna un metodo al h3-->
+    <h3 onclick="cambiarTexto(this)">Titulo h3 a cambiar</h3>
+
+    <br/>
+    <!--Vamos a tener una imagen y luego modificarla-->
+    <button onclick="cambiar()">Cambiar</button>
+    <img id="imagen" src="http://globalmentoring.com.mx/imagenes/javascript.png"/>
+
+    <!--Cambio de estilo CSS-->
+    <button onclick="cambiarCSS()">Cambar CSS del titulo</button>
+    
+    <script>
+        //Esto sobre escribe muchas cosas, utilizar con cuidado
+        document.write('saludos desde javascript');
+
+        function mostrar(){
+            document.write('Adios!');
+        }
+
+        function cambiar(){
+            document.getElementById('imagen').src = 'http://globalmentoring.com.mx/imagenes/html5.png'
+        }
+
+        function cambiarCSS(){
+            document.getElementById('titulo').style.color = 'red';
+        }
+
+        function cambiarTexto(titulo){
+            console.log(titulo);
+            titulo.innerHTML = 'Texto cambiado';
+        }
+    </script>
+
+</body>
+
+</html>

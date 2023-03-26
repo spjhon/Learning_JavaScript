@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formularios con javascript</title>
+</head>
+<body>
+    <form id="IDformulario">
+        Nombre: <input type="text" name='nombre' value='Juan'/>
+        <br/>
+        Apellido: <input type="text" name="apellido" value="Aristizabal"/>
+        <br/>
+        <!--Vamos a acceder a los elementos del formualrio y procesarlos-->
+    </form>
+    <!--Vamos a asignar una funcion a un elemento al dar click-->
+    <button onclick="mostrarValores()">Procesar y Mostrar</button>
+
+    <!--Agreguemos un div-->
+    <div id="valores"></div>
+    <div id="valores2"></div>
+
+    <script>
+        function mostrarValores(){
+            let formulario = document.forms['IDformulario'];
+            //vamos a recorrer los elementos del formulario
+            let texto = '';
+            for(let elemento of formulario){
+                texto += elemento.value + " ";//EL value es lo que hay dentro del cuadro de texto
+            }
+            console.log(texto);
+            document.getElementById('valores').innerHTML = texto;
+
+            //Ahora se accede a cada elemento por separado teniendo en cuenta que se trabaja como si fuera un objeto
+            let nombre = formulario['nombre'];
+            let apellido = formulario['apellido'];
+            document.getElementById('valores2').innerHTML = texto;
+
+        }
+    </script>
+</body>
+</html>

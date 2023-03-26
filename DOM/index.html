@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+    <style>
+        .azul{
+            color:blue;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id="cabecero" >Ejemplo DOM con javascript</h1>
+    <p id="parrafo">Saludos!</p>
+    <p class="azul">Parrafo2</p>
+    <p class="azul">Parrafo3</p>
+    <p>Parrafo4</p>
+
+
+<!--Los scripts deben de ir al final del body-->
+<script>
+//Para acceder al cabecero
+//Ojo como todos las etiquetas son tratadas como objetos, pues estos en javascript tienen atritubos y metodos
+//con innerhtml se recupera el texto    
+//Si no se coloca el inerhtml, pues coje todo el ojbeto mas no solo el texto
+
+    let cabecer = document.getElementById('cabecero').innerHTML;    
+    console.log('Saludos desde JavaScript ' + cabecer);
+
+    let parrafo = document.getElementById('parrafo');
+    console.log(parrafo.innerHTML);
+    parrafo.innerHTML = 'NUEVO PARRAFO';
+
+    //Get elements by tag
+    let parrafosJuntos = document.getElementsByTagName('p');
+    console.log(`Numero de parrafos: ${parrafosJuntos.length} \n`)
+    //Se puede iterar normalmente
+    for (let i = 0; i < parrafosJuntos.length; i++){
+        console.log(parrafosJuntos[i].innerHTML);
+    }
+
+    //Get elements por las clases de css que exiten
+    let parrafosConClases = document.getElementsByClassName('azul');
+    console.log(`Numero de parrafos: ${parrafosConClases.length} \n`)
+    /*for (let i = 0; i < parrafosConClases.length; i++){
+        console.log(parrafosConClases[i].innerHTML);
+    }*/
+
+    //Vamos a utilizar un for of
+    for(let parrafosConClase of parrafosConClases){
+        console.log(`${parrafosConClase.innerHTML}`);
+    }    
+
+</script>
+</body>
+
+</html>

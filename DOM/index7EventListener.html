@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evento action listener</title>
+</head>
+
+<body>
+    <!---->
+    <h1 id="titulo">Manejao de DOM html5</h1>
+    <br/>
+    <br/>
+
+    Nombre: <input type="text" id="nombre">
+    <br/>
+    <br/>
+    Apellido: <input type="text" id="apellido">
+    <script>
+        //Al evento listener se le coloca entre comillas el nombre del evento sin el on y luego la fucnion de tipo callback asociada a el
+        document.getElementById('nombre').addEventListener('focus', (evento) => {evento.target.style.background = 'pink'}); //Aqui se define la funcion flecha de una vez
+        document.getElementById('apellido').addEventListener('focus', cambiar);
+        document.getElementById('nombre').addEventListener('blur', regresar);
+        document.getElementById('apellido').addEventListener('blur', regresar);
+        
+        function cambiar(evento){
+            let componente = evento.target;
+            componente.style.background = 'yellow';
+        }
+
+        function regresar(evento){
+            evento.target.style.background = 'white';
+        }
+
+        //Tambien se pueden utilizar funciones flecha pero no se puede reutilizar el codigo, no es obligatorio trabajar con flechas tambine se puede con clasicas
+    </script>
+</body>
+</html>

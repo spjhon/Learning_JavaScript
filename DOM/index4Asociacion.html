@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asociacion</title>
+</head>
+<body onload="entrar()">
+    <h1 id="titulo">Manejao de DOM html5</h1>
+    <br/>
+    
+    <div id = 'mostrar'></div>
+    
+    <script>
+        //Esto es una especie de callback
+        //Aqui estamos pasando la referencia del click desde javascript sin necesidad de escribir los elementos HTML
+        document.getElementById('titulo').onclick = cambiarTexto;
+
+        function cambiarTexto(){
+            document.getElementById('titulo').innerHTML = 'NUEVO TITULO';
+        }
+
+        //Evento onload
+        // Esto es cuando se carga la pagina por primera vez o se recarga
+        function entrar (){
+            //con esto se muestra un pequeno popop
+            alert('Entrando a la pagina web');
+            //aqui es para ver si las coockies estan habilidatas
+            let coockies = '';
+            if (navigator.cookieEnabled){
+                coockies = 'Coockies habilidatadas';
+            }
+            else{
+                coockies = 'coockies estan deshabilitadas';
+            }
+            document.getElementById('mostrar').innerHTML = coockies;
+        }
+    </script>
+</body>
+</html>

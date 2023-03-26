@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evento on Change</title>
+</head>
+
+<body>
+    <!--manejo de onmouseout y onmouseover, tambien tenemos onmousedown (que es click y no se suelta) onmouseup (cuando se suelta el click)-->
+    <h1 id="titulo" onmouseover="rojo(this)" onmouseout='azul(this)'>Manejao de DOM html5</h1>
+    <br/>
+
+    <!--Vamos a agregar un texto y cuando se detecte el cambio del texto se va a ejecutar una accion-->
+    Nombre: <input type="text" id="nombre" onchange="convertir(this)"/>
+    <script>
+        function azul(titulo){
+            titulo.style.color = 'blue';
+        }        
+
+        function rojo(titulo){
+            titulo.style.color = 'red';
+        }
+
+        function convertir(nombreInput){
+            console.log(nombreInput);
+            nombreInput.value = nombreInput.value.toUpperCase();
+        }
+    </script>
+</body>
+</html>
